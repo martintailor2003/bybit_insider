@@ -1,6 +1,6 @@
 import bybit_insider
 
-client = bybit_insider.bybit(api='OVyvCXSzCjRJjplNZZ' ,secret='0qEmDIutWdIY1mjHzs7B3eUARsMKn141EDEg',mode='test')
+client = bybit_insider.bybit(api='xxxxxxxxxxxxxxxxxxx' ,secret='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',mode='test')
 
 client.market_order(symbol= "BTCUSDT",side="Buy",qty=0.1,reduce_only=False,params={"stopLoss": '10000'})
 
