@@ -26,5 +26,5 @@ Trading library for Bybit exchange. You can use for mainnet testnet copy and cop
 
 #you can add sl and tp using params: params={"stopLoss": '25000','takeProfit': '100000'} !!the number must be in string format str()!!
 
-To use the library you have to put bybit_insider.py into your project folder and import bybit_insider into your python file.
-__Check exmple.py for basic usecases of this library.__
+__To use the library you have to put bybit_insider.py into your project folder and import bybit_insider into your python file.__
+Check exmple.py for basic usecases of this library.
