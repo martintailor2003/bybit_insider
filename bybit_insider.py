@@ -2,7 +2,7 @@ import requests
 import time
 import hashlib
 import hmac
-
+import json
 #bybit_insider.bybit(api='xxxxxxxxxxxxxx' ,secret='xxxxxxxxxxxxxxxx',mode='normal'/'test'/'copy'/'copytest')
 #mandatory parameters: api,secret
 #note: Normal mode is default
@@ -125,3 +125,21 @@ class bybit():
         return self.HTTP_Request(endpoint,method,params)
     
     
+    def get_orders(self,type=None,status=None,id=None):
+        #Get unfilled Orders
+        endpoint="/contract/v3/private/order/list"
+        method="GET"
+        params= '' #settleCoin=USDT
+        orders = json.loads(self.HTTP_Request(endpoint,method,params))['result']['list']
+        
+        selected_orders = []
+        print(type)
+        for order in orders:
+            o_type = order['orderType']
+            o_status = order['orderStatus']
+            o_id = order['orderId']
+            if (type==None or type==o_type) and (status==None or status==o_status) and (id==None or id==o_id):
+                selected_orders.append(order)
+               
+                
+        return selected_orders
