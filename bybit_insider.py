@@ -133,7 +133,6 @@ class bybit():
         orders = json.loads(self.HTTP_Request(endpoint,method,params))['result']['list']
         
         selected_orders = []
-        print(type)
         for order in orders:
             o_type = order['orderType']
             o_status = order['orderStatus']
