@@ -126,12 +126,16 @@ class bybit():
     
     
     def get_orders(self,type=None,status=None,id=None):
-        #Get unfilled Orders
-        endpoint="/contract/v3/private/order/list"
+        #Get orders
+        if self.mode == 'copy' or self.mode == 'copytest':
+            endpoint="/contract/v3/private/copytrading/order/list"
+        else:
+            endpoint="/contract/v3/private/order/list"
+        
         method="GET"
         params= '' #settleCoin=USDT
         orders = json.loads(self.HTTP_Request(endpoint,method,params))['result']['list']
-        
+
         selected_orders = []
         for order in orders:
             o_type = order['orderType']
