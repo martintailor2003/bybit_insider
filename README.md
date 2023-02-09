@@ -20,7 +20,7 @@ mandatory parameters: symbol,side,qty
 note: If your account in 'One-Way Mode' idx have to be 0 (defaut value). In 'Hedge Mode' you have to use 1 for buy and 2 in case of sell.
 note: In copytrading there is not one way mode!!!
 
-__limit_order(symbol='BTCUSDT',  side='Buy'/'Sell',  qty='0.001'/'10.0', timeInForce='GoodTillCancel', reduce_only=False/True, idx=0/1/2,  params={})__
+__limit_order(symbol='BTCUSDT',  side='Buy'/'Sell',  qty='0.001'/'10.0', price='30000', timeInForce='GoodTillCancel', reduce_only=False/True, idx=0/1/2, params={})__
 mandatory parameters: symbol,side,qty,price
 other timeinForce options: 'GoodTillCancel'/ 'ImmediateOrCancel'/ 'FillOrKill'/ 'PostOnly'
 
